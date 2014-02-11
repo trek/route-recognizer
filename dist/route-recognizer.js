@@ -158,6 +158,8 @@
       if (state = this.get(charSpec)) { return state; }
 
       // Make a new state for the character spec
+      console.log("going to insert", state, charSpec);
+
       state = new State(charSpec);
 
       // Insert the new state as a child of the current state
@@ -176,6 +178,7 @@
 
     // Find a list of child states matching the next character
     match: function(ch) {
+      console.log("finding states that match", ch);
       // DEBUG "Processing `" + ch + "`:"
       var nextStates = this.nextStates,
           child, charSpec, chars;
